@@ -1,0 +1,1 @@
+# ht7-git-hooks-base
