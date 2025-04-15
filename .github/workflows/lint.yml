@@ -1,5 +1,5 @@
 name: Lint
-run-name: Shellcheck
+run-name: Lint
 
 on: [push, pull_request]
 
