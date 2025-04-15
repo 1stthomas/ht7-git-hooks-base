@@ -10,7 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       security-events: write  # required for uploading SARIF results
-      actions: read          # only required for workflows in private repositories
       contents: read
     steps:
       - name: "Checkout ${{ github.repository }}"
