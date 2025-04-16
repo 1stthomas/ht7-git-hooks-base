@@ -14,7 +14,7 @@ get_diff_files_all() {
     local separator
     [ -n "$files_tracked" ] && [ -n "$files_untracked" ] && separator="\n" || separator=""
     local files_all
-    files_all=$(printf "%s%s%s" $files_tracked $separator $files_untracked)
+    files_all=$(printf "%s%s%s" "$files_tracked" "$separator" "$files_untracked")
 
     echo "$files_all"
 }
