@@ -16,25 +16,9 @@
         "preferred-install": "dist",
         "sort-packages": true
     },
-    "extra": {
-        "installer-paths": {
-            ".git/hooks": ["1stthomas/ht7-git-hooks-base"]
-        }
-    },
     "minimum-stability": "dev",
     "prefer-stable": true,
-    "require": {
-        "php": "^8.2"
-    },
-    "require-dev": {
-        "composer/installers": "^2.3",
-        "friendsofphp/php-cs-fixer": "^3.64",
-        "phpstan/phpstan": "^2.0",
-        "phpstan/phpstan-phpunit": "^2.0",
-        "phpunit/phpcov": "^10.0.0",
-        "phpunit/phpunit": "^11.4"
-    },
     "support": {
-        "source": "https://github.com/1stthomas/ht7-git-hooks"
+        "source": "https://github.com/1stthomas/ht7-git-hooks-base"
     }
 }
