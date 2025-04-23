@@ -1,7 +1,7 @@
 #!/bin/bash
 
 get_diff_files() {
-    echo "$(git diff --name-only HEAD)"
+    git diff --name-only HEAD
 }
 
 get_diff_files_all() {
@@ -17,5 +17,5 @@ get_diff_files_all() {
 
 get_diff_files_untracked() {
     # src: https://stackoverflow.com/questions/3801321/git-list-only-untracked-files-also-custom-commands
-    echo "$(git ls-files --others --exclude-standard)"
+    git ls-files --others --exclude-standard
 }
