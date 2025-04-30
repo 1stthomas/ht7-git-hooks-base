@@ -12,7 +12,11 @@ get_diff_files_all() {
     local separator
     [ -n "$files_tracked" ] && [ -n "$files_untracked" ] && separator=" " || separator=""
     
-    printf "%s%s%s" "$files_tracked" "$separator" "$files_untracked"
+    if [ -z "$1" ]; then
+        printf "%s%s%s" "$files_tracked" "$separator" "$files_untracked"
+    else
+        printf "%s%s%s" "$files_tracked" "$separator" "$files_untracked" | grep -E "$1"
+    fi
 }
 
 get_diff_files_untracked() {
