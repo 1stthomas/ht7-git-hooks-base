@@ -28,6 +28,11 @@
             "pwd",
             "echo 'bin im update'",
             "ls -la"
+        ],
+        "post-update-cmd": [
+            "pwd",
+            "echo 'bin im update'",
+            "ls -la"
         ]
     },
     "support": {
