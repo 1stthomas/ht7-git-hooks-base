@@ -18,6 +18,18 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
+    "scripts": {
+        "post-package-install": [
+            "pwd",
+            "echo 'bin im install'",
+            "ls -la"
+        ],
+        "post-package-update":  [
+            "pwd",
+            "echo 'bin im update'",
+            "ls -la"
+        ]
+    },
     "support": {
         "source": "https://github.com/1stthomas/ht7-git-hooks-base"
     }
