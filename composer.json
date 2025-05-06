@@ -31,7 +31,12 @@
         ],
         "post-update-cmd": [
             "pwd",
-            "echo 'bin im update'",
+            "echo '--> bin im post update'",
+            "ls -la"
+        ],
+        "pre-update-cmd": [
+            "pwd",
+            "echo '--> bin im pre update'",
             "ls -la"
         ]
     },
