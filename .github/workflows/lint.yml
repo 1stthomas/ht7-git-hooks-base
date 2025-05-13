@@ -17,6 +17,6 @@ jobs:
       - name: Lint bash script conding styles
         uses: collin-miller/shfmt-action@v1
         with:
-          with: -d -i 2 -sr -ln=bash .
+          args: -d -i 2 -sr -ln=bash .
       - name: Validate composer.json
         run: composer validate --no-check-publish --strict
