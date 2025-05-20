@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# @todo: catch the error if the repository is not a git repository.
+path_repo_root=$(git rev-parse --show-toplevel)
+name_repo=$(basename "$path_repo_root")
+
+if [[ "$path_repo_root" == *ht7-git-hooks-base ]]; then
+    path_script="src/functions/initialization.sh"
+else
+    path_script="vendor/ht7/functions/initialization.sh"
+fi
+
+echo "Running pre-commit hook for $name_repo"
+echo "Path to script: $path_script"
+# source $path_script
