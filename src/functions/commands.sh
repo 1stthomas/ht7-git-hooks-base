@@ -2,7 +2,7 @@
 
 check_commands() {
     local commands=("php" "vendor/bin/phpstan" "vendor/bin/php-cs-fixer" "vendor/bin/phpunit")
-    path_base=$(git rev-parse --show-toplevel)
+    path_base=$(git rev-parse --show-toplevel) 
     
     for cmd in "${commands[@]}"; do
         [[ "$cmd" == *"/"* ]] && path_cmd="$path_base/$cmd" || path_cmd="$cmd"
@@ -10,5 +10,5 @@ check_commands() {
             echo "$cmd could not be found ($path_cmd). Please install it."
             # exit 1
         fi
-    done
+    done 
 }
