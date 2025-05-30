@@ -12,7 +12,7 @@
         }
     ],
     "bin": [
-        "bin/ht7-git-hooks"
+        "src/bin/ht7-git-hooks"
     ],
     "config": {
         "optimize-autoloader": true,
