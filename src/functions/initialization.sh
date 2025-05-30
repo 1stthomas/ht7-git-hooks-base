@@ -3,10 +3,6 @@
 get_root_path_repository() {
     local path_root=get_root_path
     local dir="${1:-$(pwd)}"
-    echo "$path_root"
-    echo $dir
-    echo " --- "
-    return 1
 
     while [[ "$dir" != "$path_root" ]]; do
         if [[ -d "$dir/.git" ]]; then
@@ -14,8 +10,17 @@ get_root_path_repository() {
             return 0
         fi
         dir=$(dirname "$dir")
-        echo "dir new: $dir"
     done
     
     return 1
+}
+
+is_installed() {
+    local path_root=$(get_root_path_repository)
+    
+    if [[ -d "$path_root/.git/hooks/ht7" ]]; then
+        return 0
+    else
+        return 1
+    fi
 }
