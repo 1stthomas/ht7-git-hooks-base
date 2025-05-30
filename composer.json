@@ -11,6 +11,9 @@
             "role": "Developer"
         }
     ],
+    "bin": [
+        "bin/ht7-git-hooks"
+    ],
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
@@ -21,23 +24,27 @@
     "scripts": {
         "post-package-install": [
             "pwd",
-            "echo 'bin im install'",
-            "ls -la"
+            "echo 'bin im base post install'"
         ],
         "post-package-update":  [
             "pwd",
-            "echo 'bin im update'",
-            "ls -la"
+            "echo 'bin im base post update'"
+        ],
+        "post-install-cmd": [
+            "pwd",
+            "echo '--> bin im base post install'"
+        ],
+        "pre-install-cmd": [
+            "pwd",
+            "echo '--> bin im base pre install'"
         ],
         "post-update-cmd": [
             "pwd",
-            "echo '--> bin im post update'",
-            "ls -la"
+            "echo '--> bin im base post update'"
         ],
         "pre-update-cmd": [
             "pwd",
-            "echo '--> bin im pre update'",
-            "ls -la"
+            "echo '--> bin im base pre update'"
         ]
     },
     "support": {
