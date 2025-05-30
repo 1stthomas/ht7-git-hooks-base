@@ -6,16 +6,19 @@ if [[ -z "$COMPOSER_RUNTIME_BIN_DIR" ]]; then
   script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
   project_root="$(cd "$script_dir/../.." && pwd)"
   bin_dir="$project_root/vendor/bin"
+  dir_repository="$project_root"
 else
   bin_dir="$COMPOSER_RUNTIME_BIN_DIR"
+  dir_repository="$bin_dir/../ht7/ht7-git-hooks-base"
 fi
 
+echo "dir_repository: $dir_repository"
 echo "project_root: $project_root"
 echo "BIN_DIR: $bin_dir"
 
 # echo "$(dirname "$0")/initialization.sh"
-source functions/environment.sh
-source functions/initialization.sh
+source "$dir_repository/src/functions/environment.sh"
+source "$dir_repository/src/functions/initialization.sh"
 
 pwd
 
