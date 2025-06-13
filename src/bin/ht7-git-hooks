@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ -z "$COMPOSER_RUNTIME_BIN_DIR" ]] && (( "${#COMPOSER_RUNTIME_BIN_DIR}" > 0 )); then
+if [[ -z "$COMPOSER_RUNTIME_BIN_DIR" ]]; then
   # When running this script in the base script, the env var isn't set.
   # Let's set it manually.
   script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
