@@ -4,7 +4,8 @@ get_root_path() {
     echo $(pwd)
 }
 
-get_root_path_repository(suffix="") {
+get_root_path_repository() {
+    local suffix="$1"
     local path_root=get_root_path
     local dir="${1:-$(pwd)}"
 
