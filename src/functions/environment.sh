@@ -14,6 +14,7 @@ get_root_path_repository() {
         if [[ -d "$dir/.git" ]]; then
             echo "$dir"
             found=0
+            break
         fi
         dir=$(dirname "$dir")
     done
