@@ -8,20 +8,25 @@ get_root_path_repository() {
     local suffix="$1"
     local path_root=get_root_path
     local dir="${1:-$(pwd)}"
+    local found=1
 
     while [[ "$dir" != "$path_root" ]]; do
         if [[ -d "$dir/.git" ]]; then
             echo "$dir"
-            return 0
+            found=0
         fi
         dir=$(dirname "$dir")
     done
 
-    if [[ -n "$$suffix" ]]; then
-        echo "/$suffix"
+    if "$found"; then
+      if [[ -n "$$suffix" ]]; then
+        echo "$dir/$suffix"
+      else
+        echo "$dir"
+      fi
     fi
     
-    return 1
+    return "$found"
 }
 
 is_installed() {
