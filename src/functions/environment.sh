@@ -26,6 +26,7 @@ get_root_path_repository() {
 
 is_installed() {
     local path_config=$(get_root_path_repository ".ht7gitconfig")
+    echo "$path_config"
     if [[ -f "$path_config" ]]; then
         echo "ht7 git hooks ist installiert."
     else
