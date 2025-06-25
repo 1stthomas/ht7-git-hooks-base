@@ -25,6 +25,7 @@ source "$dir_repository/src/functions/initialization.sh"
 
 pwd
 
+echo "path aus get_root_path_repository:"
 echo $(get_root_path_repository)
 
 # source ./functions/initialization.sh
