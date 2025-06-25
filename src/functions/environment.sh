@@ -19,7 +19,7 @@ get_root_path_repository() {
         dir=$(dirname "$dir")
     done
 
-    if "$found"; then
+    if [[ "$found" -eq 0 ]]; then
       if [[ -n "$$suffix" ]]; then
         echo "$dir/$suffix"
       else
