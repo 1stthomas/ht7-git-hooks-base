@@ -10,7 +10,7 @@ if [[ -z "$COMPOSER_RUNTIME_BIN_DIR" ]]; then
   echo "bin in 1"
 else
   bin_dir="$COMPOSER_RUNTIME_BIN_DIR"
-  dir_repository=realpath "$bin_dir/../ht7/ht7-git-hooks-base"
+  dir_repository=$(realpath "$bin_dir/../ht7/ht7-git-hooks-base")
   echo "bin in 2"
 fi
 
