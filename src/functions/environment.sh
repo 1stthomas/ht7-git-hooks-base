@@ -4,7 +4,7 @@ get_root_path() {
     echo $(pwd)
 }
 
-get_root_path_repository() {
+get_root_path_repository(suffix="") {
     local path_root=get_root_path
     local dir="${1:-$(pwd)}"
 
@@ -15,6 +15,19 @@ get_root_path_repository() {
         fi
         dir=$(dirname "$dir")
     done
+
+    if [[ -n "$$suffix" ]]; then
+        echo "/$suffix"
+    fi
     
     return 1
+}
+
+is_installed() {
+    local path_config=$(get_root_path_repository ".ht7gitconfig")
+    if [[ -f "$path_config" ]]; then
+        echo "ht7 git hooks ist installiert."
+    else
+        echo "ht7 git hooks ist NICHT installiert"
+    fi
 }
