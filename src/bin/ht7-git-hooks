@@ -7,14 +7,17 @@ if [[ -z "$COMPOSER_RUNTIME_BIN_DIR" ]]; then
   project_root="$(cd "$script_dir/../.." && pwd)"
   bin_dir="$project_root/vendor/bin"
   dir_repository="$project_root"
+  echo "bin in 1"
 else
   bin_dir="$COMPOSER_RUNTIME_BIN_DIR"
   dir_repository=realpath "$bin_dir/../ht7/ht7-git-hooks-base"
+  echo "bin in 2"
 fi
 
 echo "dir_repository: $dir_repository"
 echo "project_root: $project_root"
 echo "BIN_DIR: $bin_dir"
+pwd
 
 # echo "$(dirname "$0")/initialization.sh"
 source "$dir_repository/src/functions/environment.sh"
