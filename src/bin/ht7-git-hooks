@@ -1,5 +1,28 @@
 #!/bin/bash
 
+mode_script_call=0
+
+while getopts "p:u:" opt; do
+  case $opt in
+    p)
+      mode_script_call=1
+      ;;
+    u)
+      mode_script_call=2
+      ;;
+    *)
+      echo "Usage: $0 -a <value> -b <value> -c <value>"
+      exit 1
+      ;;
+  esac
+done
+
+if [[ "$mode_script_called" -eq 1 ]]; then
+  echo "ht7-git-hooks-base is called with arg -p."
+else
+  echo "ht7-git-hooks-base is called with arg -u."
+fi
+
 if [[ -z "$COMPOSER_RUNTIME_BIN_DIR" ]]; then
   # When running this script in the base script, the env var isn't set.
   # Let's set it manually.
