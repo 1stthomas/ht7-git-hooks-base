@@ -7,7 +7,7 @@ get_root_path() {
 get_root_path_repository() {
     local suffix="$1"
     local path_root=get_root_path
-    local dir="${1:-$(pwd)}"
+    local dir="${2:-$(pwd)}"
     local found=1
 
     while [[ "$dir" != "$path_root" ]]; do
