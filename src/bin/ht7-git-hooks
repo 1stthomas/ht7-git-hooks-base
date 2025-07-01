@@ -2,8 +2,8 @@
 
 mode_script_call=0
 
-while getopts "p:u:" opt; do
-  case $opt in
+while getopts "pu" flag; do
+  case $flag in
     p)
       mode_script_call=1
       ;;
